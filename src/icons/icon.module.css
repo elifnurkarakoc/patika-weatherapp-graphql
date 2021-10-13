@@ -1,0 +1,16 @@
+.yellow {
+  fill: #ffeb3b;
+}
+
+.white {
+  fill: #ffffff;
+}
+.gray {
+  fill: #e0e0e0;
+}
+.st1 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
