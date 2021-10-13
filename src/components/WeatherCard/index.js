@@ -5,25 +5,26 @@ import styles from "./index.module.css";
 
 import { ChoiceIcon } from "../../utils";
 const WeatherCard = ({ selectedCity }) => {
-  //   console.log(selectedCity);
+  // useQuery hook for fetching data from graphql
   const { loading, error, data } = useQuery(GET_CITY_BY_NAME, {
     variables: { name: selectedCity.name },
   });
+
   if (loading) return <p>Loading...</p>;
+
   if (error) return <p>Error :(</p>;
-  console.log({ data });
-  //const weather = data.getCityByName;
+
   const { id, name, country, coord, weather } = data.getCityByName;
-  // console.log(id, name, country, coord, weather);
-  const celsius = (weather.temperature.actual - 273).toFixed(2); //kelvin to celsius
+
+  const kelvinToCelsius = (temperature) => (temperature - 273.15).toFixed(2);
+
   return (
     <div className={styles.weather_card}>
-      <div className={styles.icon}>
-        {/* <SunnyIcon />  */}
-        {ChoiceIcon(weather.summary.icon)}
-      </div>
+      <div className={styles.icon}>{ChoiceIcon(weather.summary.icon)}</div>
       <div className={styles.weather_info}>
-        <p className={styles.celsius}>{celsius} °C</p>
+        <p className={styles.celsius}>
+          {kelvinToCelsius(weather.temperature.actual)} °C
+        </p>
         <p className={styles.text}>
           {name.replace(" Province", "")}, {country}
         </p>
@@ -33,7 +34,7 @@ const WeatherCard = ({ selectedCity }) => {
         </p>
         <hr />
         <p>Humidity {weather.clouds.humidity}%</p>
-        <p>Wind {weather.wind.speed}</p>
+        <p>Wind {weather.wind.speed} km/s</p>
       </div>
     </div>
   );
