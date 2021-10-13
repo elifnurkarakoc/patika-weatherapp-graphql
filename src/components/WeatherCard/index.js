@@ -2,19 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { GET_CITY_BY_NAME } from "../../queries/queries";
 import styles from "./index.module.css";
-import {
-  CloudIcon,
-  CloudRainIcon,
-  CloudySunIcon,
-  CloudyLightningIcon,
-  CloudyMoonIcon,
-  CloudyRainLightningIcon,
-  SunnyIcon,
-  ClearNightIcon,
-  SunnyWindIcon,
-  SnowyIcon,
-  CloudsIcon,
-} from "../../icons/icons";
+
 import { ChoiceIcon } from "../../utils";
 const WeatherCard = ({ selectedCity }) => {
   //   console.log(selectedCity);
