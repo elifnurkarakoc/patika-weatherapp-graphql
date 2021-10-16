@@ -4,15 +4,18 @@ import { GET_CITY_BY_NAME } from "../../queries/queries";
 import styles from "./index.module.css";
 
 import { ChoiceIcon } from "../../utils";
+import Loading from "../Loading";
+import Error from "../Error";
+
 const WeatherCard = ({ selectedCity }) => {
   // useQuery hook for fetching data from graphql
   const { loading, error, data } = useQuery(GET_CITY_BY_NAME, {
     variables: { name: selectedCity.name },
   });
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />
 
-  if (error) return <p>Error :(</p>;
+  if (error) return <Error error={error} />
 
   const { id, name, country, coord, weather } = data.getCityByName;
 
