@@ -17,7 +17,7 @@ const WeatherCard = ({ selectedCity }) => {
 
   if (error) return <Error error={error} />
 
-  const { id, name, country, coord, weather } = data.getCityByName;
+  const { name, country, weather } = data.getCityByName;
 
   const kelvinToCelsius = (temperature) => (temperature - 273.15).toFixed(2);
 

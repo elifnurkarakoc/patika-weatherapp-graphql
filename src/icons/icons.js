@@ -842,4 +842,3 @@ export const SnowyIcon = () => {
     </svg>
   );
 };
-

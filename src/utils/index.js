@@ -2,7 +2,6 @@ import {
   CloudIcon,
   CloudRainIcon,
   CloudySunIcon,
-  CloudyLightningIcon,
   CloudyMoonIcon,
   CloudyRainLightningIcon,
   SunnyIcon,
