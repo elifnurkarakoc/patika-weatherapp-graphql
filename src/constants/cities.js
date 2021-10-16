@@ -112,10 +112,6 @@ const allCities = [
     plate: '28',
   },
   {
-    name: 'gumushane',
-    plate: '29',
-  },
-  {
     name: 'hakkari',
     plate: '30',
   },
